@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "cn.knight.download.HttpDownloadUI"
+[compileJava, javadoc]*.options*.encoding = 'UTF-8'
+
+dependencies {
+	compile fileTree('libs')
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs 'src'
+		}
+	}
+}
