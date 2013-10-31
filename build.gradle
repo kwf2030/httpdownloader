@@ -7,11 +7,3 @@ mainClassName = "cn.knight.download.HttpDownloadUI"
 dependencies {
 	compile fileTree('libs')
 }
-
-sourceSets {
-	main {
-		java {
-			srcDirs 'src'
-		}
-	}
-}

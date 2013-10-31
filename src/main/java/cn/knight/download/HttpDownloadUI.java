@@ -43,7 +43,7 @@ public class HttpDownloadUI extends JFrame {
 
 		setBounds(new Rectangle(550, 400));
 		setLocationRelativeTo(null);
-		setTitle("HTTP Download for ZTE");
+		setTitle("HTTP Downloader");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			@Override
