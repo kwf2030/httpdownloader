@@ -3,7 +3,7 @@ httpdownloader
 
 A simple http download tool written in java swing.
 
-####Build####
+####How to build####
 run 
 <code>
 gradle distZip
