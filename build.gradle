@@ -1,9 +1,41 @@
 apply plugin: 'java'
-apply plugin: 'application'
 
-mainClassName = "cn.knight.download.HttpDownloadUI"
-[compileJava, javadoc]*.options*.encoding = 'UTF-8'
+def mainClassName = "cn.knight.download.HttpDownloadUI"
+
+tasks.withType(Compile) {
+	options.encoding = 'UTF-8'
+	options.warnings = false
+}
 
 dependencies {
 	compile fileTree('libs')
+}
+
+jar {
+	manifest {
+		attributes('Main-Class': mainClassName, 'Class-Path': libPath())
+	}
+
+	from(projectDir) {
+		include 'libs/**/*'
+	}
+
+	doLast {
+		copy {
+			from("${buildDir}/libs") {
+				include '*.jar'
+			}
+			into projectDir
+		}
+	}
+}
+
+def libPath() {
+	StringBuilder sb = new StringBuilder()
+	file('libs').listFiles().each {
+		sb.append("libs/${it.name}")
+		sb.append(' ')
+	}
+	sb.deleteCharAt(sb.length() - 1)
+	sb.toString()
 }

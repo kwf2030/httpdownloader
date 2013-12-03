@@ -4,11 +4,8 @@ httpdownloader
 A simple http download tool written in java swing.
 
 ####How to build####
-run 
+run
 <code>
-gradle distZip
-</code> 
-or
-<code>
-gradle installApp
+gradle jar
 </code>
+to generate executable JAR.
