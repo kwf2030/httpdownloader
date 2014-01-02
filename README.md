@@ -9,3 +9,15 @@ run
 gradle jar
 </code>
 to generate executable JAR.
+
+or 
+<code>
+gradle distZip
+</code>
+to generate a zip distribution.
+
+or 
+<code>
+gradle installApp
+</code>
+to install into 'build/install'.

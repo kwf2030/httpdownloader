@@ -1,8 +1,8 @@
-apply plugin: 'java'
+apply plugin: 'application'
 
-def mainClassName = "cn.knight.download.HttpDownloadUI"
+mainClassName = 'cn.knight.download.HttpDownloadUI'
 
-tasks.withType(Compile) {
+tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 	options.warnings = false
 }
@@ -12,30 +12,23 @@ dependencies {
 }
 
 jar {
+	version = '1.0'
 	manifest {
-		attributes('Main-Class': mainClassName, 'Class-Path': libPath())
+		attributes('Main-Class':mainClassName, 'Class-Path': classpath())
 	}
-
 	from(projectDir) {
 		include 'libs/**/*'
 	}
-
 	doLast {
 		copy {
-			from("${buildDir}/libs") {
-				include '*.jar'
-			}
+			from "${buildDir}/libs/${archiveName}"
 			into projectDir
 		}
 	}
 }
 
-def libPath() {
-	StringBuilder sb = new StringBuilder()
-	file('libs').listFiles().each {
-		sb.append("libs/${it.name}")
-		sb.append(' ')
-	}
-	sb.deleteCharAt(sb.length() - 1)
-	sb.toString()
+def classpath() {
+	fileTree('libs').collect {
+		relativePath(it)
+	}.join(' ')
 }
