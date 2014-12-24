@@ -21,4 +21,3 @@ or
 gradle installApp
 </code>
 to install into 'build/install'.
-
