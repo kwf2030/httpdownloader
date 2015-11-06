@@ -21,3 +21,7 @@ or
 gradle installApp
 </code>
 to install into 'build/install'.
+
+#### Screenshots
+![main](screenshots/main.png)
+![add](screenshots/add.png)
