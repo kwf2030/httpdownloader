@@ -23,5 +23,5 @@ gradle installApp
 to install into 'build/install'.
 
 #### Screenshots
-![main](screenshots/main.png)
-![add](screenshots/add.png)
+![main](https://raw.githubusercontent.com/kwf2030/httpdownloader/master/screenshots/main.png)
+![add](https://raw.githubusercontent.com/kwf2030/httpdownloader/master/screenshots/add.png)
