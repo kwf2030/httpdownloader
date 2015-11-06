@@ -1,7 +1,7 @@
 httpdownloader
 ==============
 
-A simple http download tool written in java swing.
+A simple http download tool written in Java Swing(Support breakpoint transmission).
 
 ####How to build####
 run
